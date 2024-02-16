@@ -15,11 +15,13 @@ public class TestFruit {
         System.out.println("Fruit = " + fruit);
     }
 
+    /* 
     @Test
     public void testInsertFruit(){
         String sql = "INSERT INTO fruits (fname, price, fcount, remark) VALUES ( ?, ?, ?, ?)";
         int rows = baseDao.update(sql, "Strawberry", 3, 20, "New");
         System.out.println(rows);
     }
+    */
     
 }

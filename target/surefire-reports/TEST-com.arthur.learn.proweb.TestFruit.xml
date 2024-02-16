@@ -1,63 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arthur.learn.proweb.TestFruit" time="0.735" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arthur.learn.proweb.TestFruit" time="0.743" tests="1" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.specification.version" value="21"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="c:\Work\JavaWeb\proweb\target\test-classes;c:\Work\JavaWeb\proweb\target\classes;C:\Users\ArthurCheng\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\ArthurCheng\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\ArthurCheng\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\ArthurCheng\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\ArthurCheng\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;C:\Users\ArthurCheng\.m2\repository\com\alibaba\druid\1.2.21\druid-1.2.21.jar;C:\Users\ArthurCheng\.m2\repository\commons-dbutils\commons-dbutils\1.7\commons-dbutils-1.7.jar;C:\Users\ArthurCheng\.m2\repository\org\thymeleaf\thymeleaf\3.0.11.RELEASE\thymeleaf-3.0.11.RELEASE.jar;C:\Users\ArthurCheng\.m2\repository\ognl\ognl\3.1.12\ognl-3.1.12.jar;C:\Users\ArthurCheng\.m2\repository\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;C:\Users\ArthurCheng\.m2\repository\org\attoparser\attoparser\2.0.5.RELEASE\attoparser-2.0.5.RELEASE.jar;C:\Users\ArthurCheng\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\ArthurCheng\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\ArthurCheng\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\ArthurCheng\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/arthurcheng/Documents/Study/proweb/target/test-classes:/Users/arthurcheng/Documents/Study/proweb/target/classes:/Users/arthurcheng/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/arthurcheng/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/arthurcheng/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/arthurcheng/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/Users/arthurcheng/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar:/Users/arthurcheng/.m2/repository/com/alibaba/druid/1.2.21/druid-1.2.21.jar:/Users/arthurcheng/.m2/repository/commons-dbutils/commons-dbutils/1.7/commons-dbutils-1.7.jar:/Users/arthurcheng/.m2/repository/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.jar:/Users/arthurcheng/.m2/repository/ognl/ognl/3.1.12/ognl-3.1.12.jar:/Users/arthurcheng/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar:/Users/arthurcheng/.m2/repository/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.jar:/Users/arthurcheng/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/Users/arthurcheng/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/arthurcheng/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/arthurcheng/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="user.timezone" value="America/Los_Angeles"/>
-    <property name="os.name" value="Windows 11"/>
-    <property name="java.vm.specification.version" value="21"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\ARTHUR~1\AppData\Local\Temp\surefire2301012938508630124\surefirebooter553153240356408822.jar C:\Users\ArthurCheng\AppData\Local\Temp\surefire2301012938508630124 2024-02-15T11-18-10_979-jvmRun1 surefire3623250914645195281tmp surefire_07441280179394494561tmp"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/arthurcheng/Documents/Study/proweb/target/surefire/surefirebooter17371531751461895206.jar /Users/arthurcheng/Documents/Study/proweb/target/surefire 2024-02-15T20-36-05_052-jvmRun1 surefire3744513383704280532tmp surefire_08660575754375952529tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="c:\Work\JavaWeb\proweb\target\test-classes;c:\Work\JavaWeb\proweb\target\classes;C:\Users\ArthurCheng\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\ArthurCheng\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\ArthurCheng\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\ArthurCheng\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\ArthurCheng\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;C:\Users\ArthurCheng\.m2\repository\com\alibaba\druid\1.2.21\druid-1.2.21.jar;C:\Users\ArthurCheng\.m2\repository\commons-dbutils\commons-dbutils\1.7\commons-dbutils-1.7.jar;C:\Users\ArthurCheng\.m2\repository\org\thymeleaf\thymeleaf\3.0.11.RELEASE\thymeleaf-3.0.11.RELEASE.jar;C:\Users\ArthurCheng\.m2\repository\ognl\ognl\3.1.12\ognl-3.1.12.jar;C:\Users\ArthurCheng\.m2\repository\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;C:\Users\ArthurCheng\.m2\repository\org\attoparser\attoparser\2.0.5.RELEASE\attoparser-2.0.5.RELEASE.jar;C:\Users\ArthurCheng\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\ArthurCheng\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\ArthurCheng\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\ArthurCheng\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;"/>
+    <property name="surefire.test.class.path" value="/Users/arthurcheng/Documents/Study/proweb/target/test-classes:/Users/arthurcheng/Documents/Study/proweb/target/classes:/Users/arthurcheng/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/arthurcheng/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/arthurcheng/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/arthurcheng/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/Users/arthurcheng/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar:/Users/arthurcheng/.m2/repository/com/alibaba/druid/1.2.21/druid-1.2.21.jar:/Users/arthurcheng/.m2/repository/commons-dbutils/commons-dbutils/1.7/commons-dbutils-1.7.jar:/Users/arthurcheng/.m2/repository/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.jar:/Users/arthurcheng/.m2/repository/ognl/ognl/3.1.12/ognl-3.1.12.jar:/Users/arthurcheng/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar:/Users/arthurcheng/.m2/repository/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.jar:/Users/arthurcheng/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/Users/arthurcheng/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/arthurcheng/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/arthurcheng/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\ArthurCheng"/>
+    <property name="user.home" value="/Users/arthurcheng"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-01-16"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
-    <property name="file.separator" value="\"/>
-    <property name="basedir" value="c:\Work\JavaWeb\proweb"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/arthurcheng/Documents/Study/proweb"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ARTHUR~1\AppData\Local\Temp\surefire2301012938508630124\surefirebooter553153240356408822.jar"/>
-    <property name="user.script" value=""/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/Users/arthurcheng/Documents/Study/proweb/target/surefire/surefirebooter17371531751461895206.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
-    <property name="user.name" value="ArthurCheng"/>
-    <property name="stdout.encoding" value="Cp1252"/>
-    <property name="path.separator" value=";"/>
-    <property name="os.version" value="10.0"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.8+9-LTS-211"/>
+    <property name="user.name" value="arthurcheng"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.2.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="localRepository" value="C:\Users\ArthurCheng\.m2\repository"/>
+    <property name="localRepository" value="/Users/arthurcheng/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="java.io.tmpdir" value="C:\Users\ARTHUR~1\AppData\Local\Temp\"/>
-    <property name="java.version" value="21.0.2"/>
-    <property name="user.dir" value="c:\Work\JavaWeb\proweb"/>
-    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/var/folders/yf/rfx0rpkn05l5krbl15tc35l80000gn/T/"/>
+    <property name="java.version" value="17.0.8"/>
+    <property name="user.dir" value="/Users/arthurcheng/Documents/Study/proweb"/>
+    <property name="os.arch" value="x86_64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\MiKTeX\miktex\bin\x64\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ArthurCheng\AppData\Local\Microsoft\WindowsApps;C:\Users\ArthurCheng\AppData\Local\Programs\Microsoft VS Code\bin;C:\Apps\groovy-4.0.13\bin;C:\Program Files\Java\jdk-11\bin;C:\Users\ArthurCheng\AppData\Roaming\npm;C:\Users\ArthurCheng\AppData\Local\Box\Box Edit\;C:\Apps\apache-maven-3.9.4\bin;C:\Users\ArthurCheng\AppData\Local\Programs\Git\cmd;."/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/arthurcheng/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="21.0.2+13-LTS-58"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="65.0"/>
+    <property name="java.vm.version" value="17.0.8+9-LTS-211"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testGetSingleBean" classname="com.arthur.learn.proweb.TestFruit" time="0.707"/>
-  <testcase name="testInsertFruit" classname="com.arthur.learn.proweb.TestFruit" time="0.004"/>
+  <testcase name="testGetSingleBean" classname="com.arthur.learn.proweb.TestFruit" time="0.716"/>
 </testsuite>
