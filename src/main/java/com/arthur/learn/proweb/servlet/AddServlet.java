@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.arthur.learn.proweb.dao.base.BaseDao;
 import com.arthur.learn.proweb.entity.Fruit;;
@@ -24,6 +25,8 @@ public class AddServlet extends HttpServlet {
         String sql = "INSERT INTO fruits (fname, price, fcount, remark) VALUES ( ?, ?, ?, ?)";
         int rows = baseDao.update(sql, fname, price, fcount, remark);
         System.out.println("Number of rows affected: " + rows);
+        HttpSession session = request.getSession();
+        System.out.println("Session ID is " + session.getId());
 
     }
 }
