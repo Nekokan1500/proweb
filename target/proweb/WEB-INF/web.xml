@@ -21,4 +21,45 @@
     <servlet-name>DemoServlet</servlet-name>
     <url-pattern>/demo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>DemoServlet2</servlet-name>
+    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServlet2</servlet-name>
+    <url-pattern>/demo2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DemoServlet3</servlet-name>
+    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServlet3</servlet-name>
+    <url-pattern>/demo3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DemoServlet4</servlet-name>
+    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServlet4</servlet-name>
+    <url-pattern>/demo4</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DemoServlet5</servlet-name>
+    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet05</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServlet5</servlet-name>
+    <url-pattern>/demo5</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+    <param-name>view-prefix</param-name>
+    <param-value>/</param-value>
+  </context-param>
+  <context-param>
+      <param-name>view-suffix</param-name>
+      <param-value>.html</param-value>
+  </context-param>
 </web-app>
