@@ -2,6 +2,7 @@ package com.arthur.learn.proweb.entity;
 
 public class Fruit {
     
+    private Integer fid;
     private String fname;
     private Double price;
     private Integer fcount;
@@ -10,12 +11,15 @@ public class Fruit {
     public Fruit() {
     }
 
-    public Fruit(String fname, Double price, Integer fcount, String remark) {
+    public Fruit(Integer fid, String fname, Double price, Integer fcount, String remark) {
+        this.fid = fid;
         this.fname = fname;
         this.price = price;
         this.fcount = fcount;
         this.remark = remark;
     }
+
+    
 
     public String getFname() {
         return fname;
@@ -45,6 +49,14 @@ public class Fruit {
     @Override
     public String toString() {
         return "Fruit [fname=" + fname + ", price=" + price + ", fcount=" + fcount + ", remark=" + remark + "]";
+    }
+
+    public Integer getFid() {
+        return fid;
+    }
+
+    public void setFid(Integer fid) {
+        this.fid = fid;
     }
     
 }

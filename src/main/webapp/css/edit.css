@@ -1,0 +1,77 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #808080;
+}
+div{
+    position: relative;
+    float: left;
+}
+#div_container{
+    width: 80%;
+    height: 100%;
+    border: 0px solid blue;
+    margin-left: 10%;
+    float: left;
+    background-color: azure;
+}
+#div_fruit_list{
+    width: 100%;
+    border: 0px solid red;
+}
+#tbl_fruit{
+    width: 60%;
+    line-height: 28px;
+    margin-top: 120px;
+    margin-left: 20%;
+}
+#tbl_fruit, #tbl_fruit tr, #tbl_fruit td, #tbl_fruit th{
+    border: 1px solid gray;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 16px;
+    font-weight: lighter;
+    color:teal;
+}
+.w20{
+    width: 20%;
+}
+.delImg{
+    width: 18px;
+    height: 18px;
+}
+.btn{
+    border: 1px solid lightgray;
+    width: 80px;
+    height: 24px;
+}
+#add_fruit_div{
+    border: 0px solid red;
+    width: 80%;
+    margin-left: 30%;
+}
+#add_fruit_tbl{
+    margin-top: 32px;
+    width: 80%;
+    margin-left: 10%;
+    border-collapse: collapse;
+}
+#add_fruit_tbl, add_fruit_tbl tr, add_fruit_tbl td{
+    border: 1px solid lightgray;
+    text-align: center;
+    line-height: 28px;
+}
+.w30{
+    width: 30%;
+}
+.input{
+    padding-left: 4px;
+    border: 1px solid lightgray;
+    width: 90%;
+}
+.center {
+    text-align: center;
+}
+.f30 {
+    font-size: 30px;
+}
