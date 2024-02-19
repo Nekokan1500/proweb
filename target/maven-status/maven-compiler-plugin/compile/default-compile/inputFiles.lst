@@ -3,6 +3,7 @@
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/IndexServlet.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DemoServlet2.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DemoServlet3.java
+/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/UpdateServlet.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/dao/api/FruitDao.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/entity/Fruit.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/dao/impl/FruitDaoImpl.java
