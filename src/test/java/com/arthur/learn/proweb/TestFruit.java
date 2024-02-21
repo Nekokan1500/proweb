@@ -15,6 +15,13 @@ public class TestFruit {
         System.out.println("Fruit = " + fruit);
     }
 
+    @Test
+    public void testGetCount(){
+        String sql = "select count(*) from fruits";
+        long count = baseDao.getCount(sql);
+        System.out.println("Number of fruits = " + count);
+    }
+
     /* 
     @Test
     public void testInsertFruit(){

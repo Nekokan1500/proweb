@@ -2,6 +2,7 @@ package com.arthur.learn.proweb.dao.impl;
 
 import com.arthur.learn.proweb.entity.Fruit;
 
+import java.beans.beancontext.BeanContext;
 import java.util.List;
 
 import com.arthur.learn.proweb.dao.api.FruitDao;
@@ -37,6 +38,12 @@ public class FruitDaoImpl extends BaseDao<Fruit> implements FruitDao {
     }
 
     @Override
+    public List<Fruit> getFruits(Integer pageNo) {
+        String sql = "Select * from fruits limit ?, 5";
+        return baseDao.getBeanList(sql, Fruit.class, (pageNo-1)*5);
+    }
+
+    @Override
     public int updateFruit(Fruit fruit) {
         int fid = fruit.getFid();
         String fname = fruit.getFname();
@@ -52,6 +59,12 @@ public class FruitDaoImpl extends BaseDao<Fruit> implements FruitDao {
     public int deleteFruit(int fid) {
         String sql = "Delete from fruits where fid = ?";
         return baseDao.update(sql, fid);
+    }
+
+    @Override
+    public long getFruitCount() {
+        String sql = "Select count(*) from Fruits";
+        return baseDao.getCount(sql);
     }
     
 }

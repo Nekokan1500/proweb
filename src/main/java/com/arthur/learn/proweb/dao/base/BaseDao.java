@@ -4,6 +4,7 @@ import com.arthur.learn.proweb.util.JDBCUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -26,6 +27,18 @@ public class BaseDao<T> {
         try {
             Connection connection = JDBCUtils.getConnection();
             return runner.query(connection, sql, new BeanHandler<>(entityClass), parameters);
+        }catch(SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException();
+        }
+    }
+
+    public long getCount(String sql){
+        ScalarHandler<Long> scalarHandler = new ScalarHandler<>();
+        try{
+            Connection connection = JDBCUtils.getConnection();
+            long count = runner.query(connection, sql, scalarHandler);
+            return count;
         }catch(SQLException e) {
             e.printStackTrace();
             throw new RuntimeException();

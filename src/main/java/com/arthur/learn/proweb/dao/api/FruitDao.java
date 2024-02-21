@@ -5,14 +5,18 @@ import com.arthur.learn.proweb.entity.Fruit;
 
 public interface FruitDao {
 
-    public int createFruit(Fruit fruit);
+    int createFruit(Fruit fruit);
 
-    public Fruit getFruitById(int fid);
+    Fruit getFruitById(int fid);
 
-    public List<Fruit> getFruits();
+    List<Fruit> getFruits();
 
-    public int updateFruit(Fruit fruit);
+    List<Fruit> getFruits(Integer pageNo);
 
-    public int deleteFruit(int fid);
+    int updateFruit(Fruit fruit);
+
+    int deleteFruit(int fid);
+
+    long getFruitCount();
     
 }
