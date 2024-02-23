@@ -23,7 +23,6 @@ public class FruitServlet extends ViewBaseServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
 
         String operate = request.getParameter("operate");
 
