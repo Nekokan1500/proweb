@@ -1,9 +1,9 @@
 function delFruit(fid){
     if(confirm("Do you really want to delete the fruit?")){
-        window.location.href="del.do?fid="+fid;
+        window.location.href="fruit.do?fid="+fid+'&operate=delete';
     }
 }
 
 function page(pageNo){
-    window.location.href="index?pageNo="+pageNo;
+    window.location.href="fruit.do?pageNo="+pageNo;
 }

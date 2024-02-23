@@ -2,7 +2,6 @@ package com.arthur.learn.proweb.dao.impl;
 
 import com.arthur.learn.proweb.entity.Fruit;
 
-import java.beans.beancontext.BeanContext;
 import java.util.List;
 
 import com.arthur.learn.proweb.dao.api.FruitDao;
@@ -38,9 +37,9 @@ public class FruitDaoImpl extends BaseDao<Fruit> implements FruitDao {
     }
 
     @Override
-    public List<Fruit> getFruits(Integer pageNo) {
-        String sql = "Select * from fruits limit ?, 5";
-        return baseDao.getBeanList(sql, Fruit.class, (pageNo-1)*5);
+    public List<Fruit> getFruits(String keyword, Integer pageNo) {
+        String sql = "Select * from fruits where fname like ? or remark like ? limit ?, 5";
+        return baseDao.getBeanList(sql, Fruit.class, "%"+keyword+"%", "%"+keyword+"%", (pageNo-1)*5);
     }
 
     @Override
@@ -62,9 +61,9 @@ public class FruitDaoImpl extends BaseDao<Fruit> implements FruitDao {
     }
 
     @Override
-    public long getFruitCount() {
-        String sql = "Select count(*) from Fruits";
-        return baseDao.getCount(sql);
+    public long getFruitCount(String keyword) {
+        String sql = "Select count(*) from Fruits where fname like ? or remark like ?";
+        return baseDao.getCount(sql, "%"+keyword+"%", "%"+keyword+"%");
     }
     
 }

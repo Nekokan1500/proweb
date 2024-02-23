@@ -1,7 +1,8 @@
 <html>
 <body>
 <h2>Add a new fruit</h2>
-    <form action="add" method="post">
+    <form action="fruit.do" method="post">
+        <input type="hidden" name="operate" value="add"/>
         Name: <input type="text" name="fname"/><br/>
         Price: <input type="text" name="price"/><br/>
         Inventory: <input type="text" name="fcount"/><br/>

@@ -33,11 +33,11 @@ public class BaseDao<T> {
         }
     }
 
-    public long getCount(String sql){
+    public long getCount(String sql, Object ... parameters){
         ScalarHandler<Long> scalarHandler = new ScalarHandler<>();
         try{
             Connection connection = JDBCUtils.getConnection();
-            long count = runner.query(connection, sql, scalarHandler);
+            long count = runner.query(connection, sql, scalarHandler, parameters);
             return count;
         }catch(SQLException e) {
             e.printStackTrace();

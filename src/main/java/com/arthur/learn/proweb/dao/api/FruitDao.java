@@ -11,12 +11,12 @@ public interface FruitDao {
 
     List<Fruit> getFruits();
 
-    List<Fruit> getFruits(Integer pageNo);
+    List<Fruit> getFruits(String keyword, Integer pageNo);
 
     int updateFruit(Fruit fruit);
 
     int deleteFruit(int fid);
 
-    long getFruitCount();
+    long getFruitCount(String keyword);
     
 }

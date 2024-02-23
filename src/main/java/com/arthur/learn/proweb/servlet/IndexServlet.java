@@ -20,22 +20,49 @@ public class IndexServlet extends ViewBaseServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String oper = request.getParameter("oper");
+
         Integer pageNo = 1;
-        String pageNoStr = request.getParameter("pageNo");
-        if (StringUtil.isNotEmpty(pageNoStr)){
-            pageNo = Integer.parseInt(pageNoStr);
-        }
+
+        String keyword = null;
 
         HttpSession session = request.getSession();
-        session.setAttribute("pageNo", pageNo);
+
+        if (StringUtil.isNotEmpty(oper) && "search".equals(oper)){
+            keyword = request.getParameter("keyword");
+            if(StringUtil.isEmpty(keyword)){
+                keyword = "";
+            }
+            session.setAttribute("keyword", keyword);
+        }else{
+            String pageNoStr = request.getParameter("pageNo");
+            if (StringUtil.isNotEmpty(pageNoStr)){
+                pageNo = Integer.parseInt(pageNoStr);
+            }
+
+            Object keywordObj = session.getAttribute("keyword");
+
+            if (keywordObj != null){
+                keyword = (String)keywordObj;
+            }
+            else
+                keyword = "";
+        }
         
+        session.setAttribute("pageNo", pageNo);
+
         FruitDao fruitDao = new FruitDaoImpl();
-        List<Fruit> fruits = fruitDao.getFruits(pageNo);
+        List<Fruit> fruits = fruitDao.getFruits(keyword, pageNo);
         session.setAttribute("fruitList", fruits);
-        long fruitCount = fruitDao.getFruitCount();
+        long fruitCount = fruitDao.getFruitCount(keyword);
         long pageCount = (fruitCount+5-1)/5;
         session.setAttribute("pageCount", pageCount);
         super.processTemplate("index", request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
     }
     
 }
