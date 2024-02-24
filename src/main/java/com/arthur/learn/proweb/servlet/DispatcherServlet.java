@@ -9,7 +9,6 @@ import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -25,7 +24,7 @@ import org.xml.sax.SAXException;
 import com.arthur.learn.proweb.util.StringUtil;
 
 @WebServlet("*.do")
-public class DispatcherServlet extends HttpServlet {
+public class DispatcherServlet extends ViewBaseServlet {
 
     private Map<String, Object> beanMap = new HashMap<>();
 
@@ -88,9 +87,21 @@ public class DispatcherServlet extends HttpServlet {
         }
 
         try {
-            Method method = controllerBeanObj.getClass().getDeclaredMethod(operate, HttpServletRequest.class, HttpServletResponse.class);
+            Method method = controllerBeanObj.getClass().getDeclaredMethod(operate, HttpServletRequest.class);
             if (method != null){
-                method.invoke(this, request, response);
+                //method.setAccessible(true);
+                Object returnObj = method.invoke(controllerBeanObj, request);
+                if (returnObj != null){
+                    // View processing
+                    String returnStr = (String)returnObj;
+                    if(returnStr.startsWith("redirect:")){     // e.g., redirect:fruit.do
+                        String redirectStr = returnStr.substring("redirect:".length());
+                        response.sendRedirect(redirectStr);
+                    }
+                    else{   // e.g., edit
+                        super.processTemplate(returnStr, request, response);
+                    }
+                }
             }
             else{
                 throw new RuntimeException("Invalid operation");

@@ -1,24 +1,20 @@
 package com.arthur.learn.proweb.controller;
 
-import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.arthur.learn.proweb.entity.Fruit;
 import com.arthur.learn.proweb.util.StringUtil;
 import com.arthur.learn.proweb.dao.api.FruitDao;
 import com.arthur.learn.proweb.dao.impl.FruitDaoImpl;
-import com.arthur.learn.proweb.servlet.ViewBaseServlet;
 
-public class FruitController extends ViewBaseServlet {
+public class FruitController {
 
-    FruitDao fruitDao = new FruitDaoImpl();
+    private FruitDao fruitDao = new FruitDaoImpl();
 
-    private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private String index(HttpServletRequest request){
 
         String oper = request.getParameter("oper");
 
@@ -56,11 +52,11 @@ public class FruitController extends ViewBaseServlet {
         long fruitCount = fruitDao.getFruitCount(keyword);
         long pageCount = (fruitCount+5-1)/5;
         session.setAttribute("pageCount", pageCount);
-        super.processTemplate("index", request, response);
+        //super.processTemplate("index", request, response);
+        return "index";
     }
 
-    private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+    private String add(HttpServletRequest request){
         String fname = request.getParameter("fname");
         Double price = Double.parseDouble(request.getParameter("price"));
         Integer fcount = Integer.parseInt(request.getParameter("fcount"));
@@ -69,30 +65,34 @@ public class FruitController extends ViewBaseServlet {
         Fruit fruit = new Fruit(null, fname, price, fcount, remark);
 
         fruitDao.createFruit(fruit);
-        response.sendRedirect("fruit.do");
+        //response.sendRedirect("fruit.do");
+        return "redirect:fruit.do";
     }
 
-    private void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private String delete(HttpServletRequest request){
         String fidStr = request.getParameter("fid");
         if (StringUtil.isNotEmpty(fidStr)){
             int fid = Integer.parseInt(fidStr);
             fruitDao.deleteFruit(fid);
+            return "redirect:fruit.do";
         }
-        response.sendRedirect("fruit.do");
+        return "error";
     }
 
-    private void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private String edit(HttpServletRequest request) {
         String fidStr = request.getParameter("fid");
 
         if (StringUtil.isNotEmpty(fidStr)){
             int fid = Integer.parseInt(fidStr);
             Fruit fruit = fruitDao.getFruitById(fid);
             request.setAttribute("fruit", fruit);
-            super.processTemplate("edit", request, response);
+            //super.processTemplate("edit", request, response);
+            return "edit";
         }
+        return "error";
     }
 
-    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private String update(HttpServletRequest request) {
         Integer fid = Integer.parseInt(request.getParameter("fid"));
         String fname = request.getParameter("fname");
         Double price = Double.parseDouble(request.getParameter("price"));
@@ -104,8 +104,8 @@ public class FruitController extends ViewBaseServlet {
         fruitDao.updateFruit(newFruit);
 
         //super.processTemplate("index", request, response);
-        response.sendRedirect("fruit.do");
-
+        // response.sendRedirect("fruit.do");
+        return "redirect:fruit.do";
     }
     
 }
