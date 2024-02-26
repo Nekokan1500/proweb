@@ -16,7 +16,7 @@ import com.arthur.learn.proweb.util.StringUtil;
 import com.arthur.learn.proweb.dao.api.FruitDao;
 import com.arthur.learn.proweb.dao.impl.FruitDaoImpl;
 
-@WebServlet("/fruit.do")
+//@WebServlet("/fruit.do")
 public class FruitServlet extends ViewBaseServlet {
 
     FruitDao fruitDao = new FruitDaoImpl();

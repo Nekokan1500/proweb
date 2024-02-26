@@ -1,10 +1,7 @@
-/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/AddServlet.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/controller/FruitController.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/filter/TransactionFilter.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/IndexServlet.java
-/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DemoServlet2.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/FruitServlet.java
-/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DemoServlet3.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/UpdateServlet.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/dao/api/FruitDao.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/entity/Fruit.java
@@ -13,9 +10,6 @@
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/ViewBaseServlet.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DispatcherServlet.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/util/JDBCUtils.java
-/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DemoServlet.java
+/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/Demo201Servlet.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/util/StringUtil.java
-/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DemoServlet05.java
 /Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/dao/base/BaseDao.java
-/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DemoServlet4.java
-/Users/arthurcheng/Documents/Study/proweb/src/main/java/com/arthur/learn/proweb/servlet/DelServlet.java

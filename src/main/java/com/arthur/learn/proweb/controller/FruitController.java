@@ -14,28 +14,21 @@ public class FruitController {
 
     private FruitDao fruitDao = new FruitDaoImpl();
 
-    private String index(HttpServletRequest request){
-
-        String oper = request.getParameter("oper");
-
-        Integer pageNo = 1;
-
-        String keyword = null;
+    private String index(HttpServletRequest request, String oper, String keyword, Integer pageNo){
 
         HttpSession session = request.getSession();
 
+        if (pageNo == null){
+            pageNo = 1;
+        }
+
         if (StringUtil.isNotEmpty(oper) && "search".equals(oper)){
-            keyword = request.getParameter("keyword");
+            pageNo = 1;
             if(StringUtil.isEmpty(keyword)){
                 keyword = "";
             }
             session.setAttribute("keyword", keyword);
         }else{
-            String pageNoStr = request.getParameter("pageNo");
-            if (StringUtil.isNotEmpty(pageNoStr)){
-                pageNo = Integer.parseInt(pageNoStr);
-            }
-
             Object keywordObj = session.getAttribute("keyword");
 
             if (keywordObj != null){
@@ -56,11 +49,7 @@ public class FruitController {
         return "index";
     }
 
-    private String add(HttpServletRequest request){
-        String fname = request.getParameter("fname");
-        Double price = Double.parseDouble(request.getParameter("price"));
-        Integer fcount = Integer.parseInt(request.getParameter("fcount"));
-        String remark = request.getParameter("remark");
+    private String add(String fname, Double price, Integer fcount, String remark){
 
         Fruit fruit = new Fruit(null, fname, price, fcount, remark);
 
@@ -69,21 +58,17 @@ public class FruitController {
         return "redirect:fruit.do";
     }
 
-    private String delete(HttpServletRequest request){
-        String fidStr = request.getParameter("fid");
-        if (StringUtil.isNotEmpty(fidStr)){
-            int fid = Integer.parseInt(fidStr);
+    private String delete(Integer fid){
+        if (fid != null){
             fruitDao.deleteFruit(fid);
             return "redirect:fruit.do";
         }
         return "error";
     }
 
-    private String edit(HttpServletRequest request) {
-        String fidStr = request.getParameter("fid");
+    private String edit(HttpServletRequest request, Integer fid) {
 
-        if (StringUtil.isNotEmpty(fidStr)){
-            int fid = Integer.parseInt(fidStr);
+        if (fid != null){
             Fruit fruit = fruitDao.getFruitById(fid);
             request.setAttribute("fruit", fruit);
             //super.processTemplate("edit", request, response);
@@ -92,20 +77,12 @@ public class FruitController {
         return "error";
     }
 
-    private String update(HttpServletRequest request) {
-        Integer fid = Integer.parseInt(request.getParameter("fid"));
-        String fname = request.getParameter("fname");
-        Double price = Double.parseDouble(request.getParameter("price"));
-        Integer fcount = Integer.parseInt(request.getParameter("fcount"));
-        String remark = request.getParameter("remark");
-
-        Fruit newFruit = new Fruit(fid, fname, price, fcount, remark);
-
-        fruitDao.updateFruit(newFruit);
+    private String update(Integer fid, String fname, Double price, Integer fcount, String remark) {
+        
+        fruitDao.updateFruit(new Fruit(fid, fname, price, fcount, remark));
 
         //super.processTemplate("index", request, response);
         // response.sendRedirect("fruit.do");
         return "redirect:fruit.do";
     }
-    
 }

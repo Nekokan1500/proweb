@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -87,32 +88,58 @@ public class DispatcherServlet extends ViewBaseServlet {
         }
 
         try {
-            Method method = controllerBeanObj.getClass().getDeclaredMethod(operate, HttpServletRequest.class);
-            if (method != null){
-                //method.setAccessible(true);
-                Object returnObj = method.invoke(controllerBeanObj, request);
-                if (returnObj != null){
-                    // View processing
-                    String returnStr = (String)returnObj;
-                    if(returnStr.startsWith("redirect:")){     // e.g., redirect:fruit.do
-                        String redirectStr = returnStr.substring("redirect:".length());
-                        response.sendRedirect(redirectStr);
+            Method[] methods = controllerBeanObj.getClass().getDeclaredMethods();
+            for (Method method :  methods){
+                if (operate.equals(method.getName())){    
+                    Parameter[] parameters = method.getParameters();
+                    Object[] parameterValues = new Object[parameters.length];
+                    for(int i = 0; i < parameters.length; i++){
+                        Parameter parameter = parameters[i];
+                        String parameterName = parameter.getName();
+                        if ("request".equals(parameterName)){
+                            parameterValues[i] = request;
+                        } else if ("response".equals(parameterName)){
+                            parameterValues[i] = response;
+                        } else if ("session".equals(parameterName)){
+                            parameterValues[i] = request.getSession();
+                        }
+                        else{
+                            String parameterValue = request.getParameter(parameterName);
+                            String typeName = parameter.getType().getName();
+
+                            Object parameterObj = null;
+                            if ("java.lang.Integer".equals(typeName) && parameterValue != null){
+                                parameterObj = Integer.parseInt(parameterValue);
+                            }else if ("java.lang.Double".equals(typeName) && parameterValue != null){
+                                parameterObj = Double.parseDouble(parameterValue);
+                            } else{
+                                parameterObj = parameterValue;
+                            }
+
+                            parameterValues[i] = parameterObj;
+                        }
                     }
-                    else{   // e.g., edit
-                        super.processTemplate(returnStr, request, response);
+                    method.setAccessible(true);
+                    Object returnObj = method.invoke(controllerBeanObj, parameterValues);
+                    if (returnObj != null){
+                        // View processing
+                        String returnStr = (String)returnObj;
+                        if(returnStr.startsWith("redirect:")){     // e.g., redirect:fruit.do
+                            String redirectStr = returnStr.substring("redirect:".length());
+                            response.sendRedirect(redirectStr);
+                        }
+                        else{   // e.g., edit
+                            super.processTemplate(returnStr, request, response);
+                        }
                     }
                 }
             }
-            else{
-                throw new RuntimeException("Invalid operation");
-            }
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            //throw new RuntimeException("Invalid operation");
         } catch (SecurityException e) {
             e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
         } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();

@@ -4,54 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:ApplicationContext.xml</param-value>
+  </context-param>
+
+
   <servlet>
-    <servlet-name>AddServlet</servlet-name>
-    <servlet-class>com.arthur.learn.proweb.servlet.AddServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet>
-    <servlet-name>DemoServlet</servlet-name>
-    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AddServlet</servlet-name>
-    <url-pattern>/add</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>DemoServlet</servlet-name>
-    <url-pattern>/demo</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>DemoServlet2</servlet-name>
-    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet2</servlet-class>
+    <servlet-name>demo201Servlet</servlet-name>
+    <servlet-class>com.arthur.learn.proweb.servlet.Demo201Servlet</servlet-class>
+    <init-param>
+      <param-name>message</param-name>
+      <param-value>Hello World</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DemoServlet2</servlet-name>
-    <url-pattern>/demo2</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>DemoServlet3</servlet-name>
-    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet3</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DemoServlet3</servlet-name>
-    <url-pattern>/demo3</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>DemoServlet4</servlet-name>
-    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet4</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DemoServlet4</servlet-name>
-    <url-pattern>/demo4</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>DemoServlet5</servlet-name>
-    <servlet-class>com.arthur.learn.proweb.servlet.DemoServlet05</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DemoServlet5</servlet-name>
-    <url-pattern>/demo5</url-pattern>
+    <servlet-name>demo201Servlet</servlet-name>
+    <url-pattern>/demo201</url-pattern>
   </servlet-mapping>
 
   <context-param>
