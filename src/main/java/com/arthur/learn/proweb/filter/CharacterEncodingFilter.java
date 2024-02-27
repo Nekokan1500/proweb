@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.arthur.learn.proweb.util.StringUtil;
 
+/* 
 @WebFilter(urlPatterns = {"fruit.do"}, initParams = {
     @WebInitParam(name="encoding", value="UTF-8")
 })
+*/
 public class CharacterEncodingFilter implements Filter{
 
     private String encoding = "UTF-8";

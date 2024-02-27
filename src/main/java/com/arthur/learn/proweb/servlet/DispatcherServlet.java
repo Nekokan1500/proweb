@@ -92,14 +92,9 @@ public class DispatcherServlet extends ViewBaseServlet {
                 }
             }
             //throw new RuntimeException("Invalid operation");
-        } catch (SecurityException e) {
+        } catch (Exception e){
             e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Thrown from dispatcher servlet");
         }
     }
 }

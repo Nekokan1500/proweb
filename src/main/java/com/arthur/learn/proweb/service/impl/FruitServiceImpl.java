@@ -5,6 +5,7 @@ import java.util.List;
 import com.arthur.learn.proweb.dao.api.FruitDao;
 import com.arthur.learn.proweb.entity.Fruit;
 import com.arthur.learn.proweb.service.FruitService;
+import com.arthur.learn.proweb.util.JDBCUtils;
 
 public class FruitServiceImpl implements FruitService{
 
@@ -27,11 +28,13 @@ public class FruitServiceImpl implements FruitService{
 
     @Override
     public List<Fruit> getFruitList(String keyword, Integer pageNo) {
+        System.out.println("Connection used by getFruitList = " + JDBCUtils.getConnection());
         return fruitDao.getFruits(keyword, pageNo);
     }
 
     @Override
     public Integer getPageCount(String keyword) {
+        System.out.println("Connection used by getPageCount = " + JDBCUtils.getConnection());
         long fruitCount = fruitDao.getFruitCount(keyword);
         return (int)(fruitCount +5 - 1)/5;
     }
