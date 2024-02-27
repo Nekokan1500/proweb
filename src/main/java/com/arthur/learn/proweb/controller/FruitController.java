@@ -6,13 +6,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.arthur.learn.proweb.entity.Fruit;
+import com.arthur.learn.proweb.service.FruitService;
 import com.arthur.learn.proweb.util.StringUtil;
-import com.arthur.learn.proweb.dao.api.FruitDao;
-import com.arthur.learn.proweb.dao.impl.FruitDaoImpl;
 
 public class FruitController {
 
-    private FruitDao fruitDao = new FruitDaoImpl();
+    private FruitService fruitService = null;
 
     private String index(HttpServletRequest request, String oper, String keyword, Integer pageNo){
 
@@ -40,10 +39,9 @@ public class FruitController {
         
         session.setAttribute("pageNo", pageNo);
 
-        List<Fruit> fruits = fruitDao.getFruits(keyword, pageNo);
+        List<Fruit> fruits = fruitService.getFruitList(keyword, pageNo);
         session.setAttribute("fruitList", fruits);
-        long fruitCount = fruitDao.getFruitCount(keyword);
-        long pageCount = (fruitCount+5-1)/5;
+        long pageCount = fruitService.getPageCount(keyword);
         session.setAttribute("pageCount", pageCount);
         //super.processTemplate("index", request, response);
         return "index";
@@ -53,14 +51,14 @@ public class FruitController {
 
         Fruit fruit = new Fruit(null, fname, price, fcount, remark);
 
-        fruitDao.createFruit(fruit);
+        fruitService.addFruit(fruit);
         //response.sendRedirect("fruit.do");
         return "redirect:fruit.do";
     }
 
     private String delete(Integer fid){
         if (fid != null){
-            fruitDao.deleteFruit(fid);
+            fruitService.delFruit(fid);
             return "redirect:fruit.do";
         }
         return "error";
@@ -69,7 +67,7 @@ public class FruitController {
     private String edit(HttpServletRequest request, Integer fid) {
 
         if (fid != null){
-            Fruit fruit = fruitDao.getFruitById(fid);
+            Fruit fruit = fruitService.getFruitById(fid);
             request.setAttribute("fruit", fruit);
             //super.processTemplate("edit", request, response);
             return "edit";
@@ -79,7 +77,7 @@ public class FruitController {
 
     private String update(Integer fid, String fname, Double price, Integer fcount, String remark) {
         
-        fruitDao.updateFruit(new Fruit(fid, fname, price, fcount, remark));
+        fruitService.updateFruit(new Fruit(fid, fname, price, fcount, remark));
 
         //super.processTemplate("index", request, response);
         // response.sendRedirect("fruit.do");

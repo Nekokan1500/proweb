@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <beans>
-    <bean id="fruit" class="com.arthur.learn.proweb.controller.FruitController"></bean>
+    <bean id="fruitDao" class="com.arthur.learn.proweb.dao.impl.FruitDaoImpl"></bean>
+    <bean id="fruitService" class="com.arthur.learn.proweb.service.impl.FruitServiceImpl">
+        <property name="fruitDao" ref="fruitDao"/>
+    </bean>
+    <bean id="fruit" class="com.arthur.learn.proweb.controller.FruitController">
+        <property name="fruitService" ref="fruitService"/>
+    </bean>
 </beans>
