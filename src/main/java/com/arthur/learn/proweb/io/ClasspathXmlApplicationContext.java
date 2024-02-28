@@ -17,13 +17,22 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import com.arthur.learn.proweb.util.StringUtil;
+
 public class ClasspathXmlApplicationContext implements BeanFactory {
 
     private Map<String, Object> beanMap = new HashMap<>();
 
     public ClasspathXmlApplicationContext(){
+        this("ApplicationContext.xml");
+    }
+
+    public ClasspathXmlApplicationContext(String path){
+        if (StringUtil.isEmpty(path)){
+            throw new RuntimeException("Path of IOC config file not specified.");
+        }
         try {
-            InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("ApplicationContext.xml");
+            InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream(path);
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newDefaultInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             Document document = documentBuilder.parse(resourceAsStream);

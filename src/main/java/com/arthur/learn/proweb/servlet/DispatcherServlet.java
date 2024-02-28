@@ -1,17 +1,16 @@
 package com.arthur.learn.proweb.servlet;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.arthur.learn.proweb.io.BeanFactory;
-import com.arthur.learn.proweb.io.ClasspathXmlApplicationContext;
 import com.arthur.learn.proweb.util.StringUtil;
 
 @WebServlet("*.do")
@@ -23,7 +22,14 @@ public class DispatcherServlet extends ViewBaseServlet {
 
     public void init() throws ServletException{
         super.init();
-        beanFactory = new ClasspathXmlApplicationContext();
+        //beanFactory = new ClasspathXmlApplicationContext();
+        ServletContext application = getServletContext();
+        Object beanFactoryObj = application.getAttribute("beanFactory");
+        if (beanFactoryObj != null){
+            beanFactory = (BeanFactory) beanFactoryObj;
+        } else{
+            throw new RuntimeException("Error getting IOC container");
+        }
     }
 
     @Override

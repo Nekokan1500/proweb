@@ -32,6 +32,10 @@
       <param-name>view-suffix</param-name>
       <param-value>.html</param-value>
   </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>ApplicationContext.xml</param-value>
+  </context-param>
 
   <!-- 
   <filter>
@@ -42,5 +46,11 @@
     <filter-name>demo202</filter-name>
     <url-pattern>/demo202</url-pattern>
   </filter-mapping>
+  -->
+
+  <!--
+  <listener>
+    <listener-class>com.arthur.learn.proweb.listener.MyServletContextListener</listener-class>
+  </listener>
   -->
 </web-app>
